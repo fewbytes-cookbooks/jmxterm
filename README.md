@@ -4,10 +4,18 @@
 
 # Usage
 
+<pre>
+	<code> 
+		jmxterm_jmx_exec "<name>" do
+			command "<string>" #
+		end 
+	</code>
+</pre>
+
 # Attributes
 
 # Recipes
 
 # Author
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Author:: Alex SHD (alex@fewbytes.com)
