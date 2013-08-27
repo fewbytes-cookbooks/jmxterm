@@ -7,11 +7,16 @@ Installs `jmxterm` and executes jmx command.
 
 ```ruby
 jmxterm_jmx_exec "<name>" do
-	command "<string>" #
+	command "<string>" # 
 end 
 ```
 
 ## Attributes
+```
+default['jmxterm']['provider']['site']	=	'http://downloads.sourceforge.net/cyclops-group/jmxterm-1.0-alpha-4-uber.jar' # Source  
+default['jmxterm']['version']		=	"1.0-alpha-4-uber" # Version
+default['jmxterm']['dest'] 		=	"/opt/jmxterm.jar" # Target location 
+```
 
 ## Recipes
 
