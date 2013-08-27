@@ -1,21 +1,20 @@
-# jmxterm cookbook
+## jmxterm cookbook
+Installs `jmxterm` and executes jmx command. 
 
-# Requirements
+## Requirements
 
-# Usage
+## Usage
 
-<pre>
-	<code> 
-		jmxterm_jmx_exec "<name>" do
-			command "<string>" #
-		end 
-	</code>
-</pre>
+```ruby
+jmxterm_jmx_exec "<name>" do
+	command "<string>" #
+end 
+```
 
-# Attributes
+## Attributes
 
-# Recipes
+## Recipes
 
-# Author
+## Author
 
 Author:: Alex SHD (alex@fewbytes.com)
