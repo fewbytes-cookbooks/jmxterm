@@ -14,9 +14,9 @@ end
 ```
 
 ## Attributes
-`node['jmxterm']['url']` - URL to download jmxterm from
-`node['jmxterm']['checksum']` - checksum of jmxterm jar to avoid re-downloading
-`node['jmxterm']['dest']` - Target location for the jmxterm jar
+* `node['jmxterm']['url']` - URL to download jmxterm from
+* `node['jmxterm']['checksum']` - checksum of jmxterm jar to avoid re-downloading
+* `node['jmxterm']['dest']` - Target location for the jmxterm jar
 
 ## Recipes
 
