@@ -2,21 +2,21 @@
 Installs `jmxterm` and executes jmx command. 
 
 ## Requirements
+Java
 
 ## Usage
 
 ```ruby
-jmxterm_jmx_exec "<name>" do
-	command "<string>" # 
+jmxterm_jmx_exec "<mbean>" do
+	method "<string>" # 
+    arguments ["arg1", "arg2"] # single non-array argument also allowed
 end 
 ```
 
 ## Attributes
-```
-default['jmxterm']['provider']['site']	=	'http://downloads.sourceforge.net/cyclops-group/jmxterm-1.0-alpha-4-uber.jar' # Source  
-default['jmxterm']['version']		=	"1.0-alpha-4-uber" # Version
-default['jmxterm']['dest'] 		=	"/opt/jmxterm.jar" # Target location 
-```
+`node['jmxterm']['url']` - URL to download jmxterm from
+`node['jmxterm']['checksum']` - checksum of jmxterm jar to avoid re-downloading
+`node['jmxterm']['dest']` - Target location for the jmxterm jar
 
 ## Recipes
 
