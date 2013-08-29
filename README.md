@@ -8,7 +8,7 @@ Java
 
 ```ruby
 jmxterm_jmx_exec "<mbean>" do
-	method "<string>" # 
+	operation "<string>"
     arguments ["arg1", "arg2"] # single non-array argument also allowed
 end 
 ```
