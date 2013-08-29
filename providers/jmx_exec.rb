@@ -1,5 +1,4 @@
 
-
 def whyrun_supported?
   true
 end
@@ -8,17 +7,17 @@ end
 use_inline_resources
 
 def jmxterm_install
-	directory :File.dirname(node['jmxtools']['jmxterm']['dest']) do
+	directory :File.dirname(node['jmxterm']['dest']) do
 		mode 00755
 		recursive true
 	end
 
-	remote_file node['jmxtools']['jmxterm']['dest'] do
+	remote_file node['jmxterm']['dest'] do
  		owner "tomcat6"
   		group "tomcat6"
   		mode 00644
-  		source node['jmxtools']['jmxterm']['url']
-  		checksum node['jmxtools']['jmxterm']['checksum']
+  		source node['jmxterm']['url']
+  		checksum node['jmxterm']['checksum']
   		action :create_if_missing
 	end
 end
