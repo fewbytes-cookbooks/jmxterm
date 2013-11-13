@@ -7,7 +7,7 @@ end
 use_inline_resources
 
 def jmxterm_install
-  node.run_context.include_recipe "jmxterm::install"
+  run_context.include_recipe "jmxterm::install" unless ::File.exists?(node['jmxterm']['dest'])
 end
 
 # def jmxterm_check(location)
@@ -26,7 +26,7 @@ end
 def jmxterm_args
   args = ["-l #{new_resource.host}:#{new_resource.port}"]
   args << "-u #{new_resource.user} -p #{new_resource.password}" if new_resource.user and new_resource.password
-  args
+  args.join(" ")
 end
 
 action :run do
