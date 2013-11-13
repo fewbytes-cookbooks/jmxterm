@@ -23,6 +23,12 @@ end
 # 	new_resource.user && new_resource.password
 # end
 
+def jmxterm_args
+  args = ["-l #{new_resource.host}:#{new_resource.port}"]
+  args << "-u #{new_resource.user} -p #{new_resource.password}" if new_resource.user and new_resource.password
+  args
+end
+
 action :run do
 	jmxterm_install
 
@@ -35,7 +41,7 @@ action :run do
 
 	#Chef::Log.info("Simple Test #{new_resource.name}")
 	execute "#{new_resource.name}" do
-		command "printf 'mbean #{new_resource.mbean}\n#{new_resource.operation} #{args}\n' | #{node['java']['java_home']['java']} -jar #{node['jmxterm']['dest']} -l #{new_resource.host}:#{new_resource.port}"
+		command "printf 'mbean #{new_resource.mbean}\n#{new_resource.operation} #{args}\n' | #{node['java']['java_home']['java']} -jar #{node['jmxterm']['dest']} #{jmxterm_args}"
 		action :run
 	end
 end
