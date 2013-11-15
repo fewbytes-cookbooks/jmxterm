@@ -1,4 +1,7 @@
 ## jmxterm cookbook
+
+[![Build Status](https://travis-ci.org/fewbytes-cookbooks/jmxterm.png)](https://travis-ci.org/fewbytes-cookbooks/jmxterm)
+
 Installs `jmxterm` and executes jmx command. 
 
 ## Requirements
