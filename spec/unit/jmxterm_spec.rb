@@ -1,7 +1,12 @@
 require 'spec_helper'
 
 describe 'jmxterm' do
-  let(:chef_run) { ChefSpec::Runner.new(step_into: ['jmxterm_jmx_exec']).converge(described_recipe) }
+  let(:chef_run) do
+  	ChefSpec::Runner.new(step_into: ['jmxterm_jmx_exec']) do |node|
+  		node.set["java"]["java_home"] = "/usr/lib/jvm/default-java"
+  	end.converge(described_recipe)
+
+  end
 
   it 'uses the LWRP' do
     expect(chef_run).to run_jmxterm_jmx_exec('resource')
