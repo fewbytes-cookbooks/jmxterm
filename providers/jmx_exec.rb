@@ -5,20 +5,7 @@ end
 use_inline_resources
 
 def jmxterm_install
-	directory ::File.dirname(node['jmxterm']['dest']) do
-		mode 00755
-		recursive true
-		action :create
-	end
-
-	remote_file node['jmxterm']['dest'] do
- 		owner 'tomcat6'
-  		group 'tomcat6'
-  		mode 00644
-  		source node['jmxterm']['url']
-  		checksum node['jmxterm']['checksum']
-  		action :create_if_missing
-	end
+	run_context.include_recipe "jmxterm::install"
 end
 
 action :run do

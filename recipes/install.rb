@@ -7,8 +7,6 @@ directory ::File.dirname(node['jmxterm']['dest']) do
 end
 
 remote_file node['jmxterm']['dest'] do
-  owner "tomcat6"
-    group "tomcat6"
     mode 00644
     source node['jmxterm']['url']
     checksum node['jmxterm']['checksum']
