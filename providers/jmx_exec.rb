@@ -25,7 +25,7 @@ action :run do
 	end
 	# Chef::Log.info("Simple Test #{new_resource.name}")
 	execute new_resource.name do
-		command "printf 'mbean #{new_resource.mbean}\nrun #{new_resource.operation} #{args}\n' | #{node['java']['java_home']['java']} -jar #{node['jmxterm']['dest']} -l #{new_resource.host}:#{new_resource.port} #{auth_opts}"
+		command "printf 'bean #{new_resource.mbean}\nrun #{new_resource.operation} #{args}\n' | #{node['java']['java_home']['java']} -jar #{node['jmxterm']['dest']} -l #{new_resource.host}:#{new_resource.port} -n -e #{auth_opts}"
 		action :run
 	end
 end
