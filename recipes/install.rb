@@ -10,5 +10,4 @@ remote_file node['jmxterm']['dest'] do
     mode 00644
     source node['jmxterm']['url']
     checksum node['jmxterm']['checksum']
-    action :create_if_missing
 end
